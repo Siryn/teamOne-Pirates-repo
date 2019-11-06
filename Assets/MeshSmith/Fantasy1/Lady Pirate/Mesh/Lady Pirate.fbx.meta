@@ -314,25 +314,25 @@ ModelImporter:
     second: hurt
   - first:
       74: 7400004
-    second: atk01
+    second: slash
   - first:
       74: 7400006
-    second: atk02
+    second: long slash
   - first:
       74: 7400008
     second: atk03
   - first:
       74: 7400010
-    second: atk05
+    second: sheathe and slap
   - first:
       74: 7400012
     second: shoot
   - first:
       74: 7400014
-    second: atk07
+    second: victory
   - first:
       74: 7400016
-    second: atk08
+    second: huzzah
   - first:
       74: 7400018
     second: atk09
@@ -362,13 +362,13 @@ ModelImporter:
     second: bigshow
   - first:
       74: 7400036
-    second: special_21
+    second: front flip special
   - first:
       74: 7400038
-    second: special_22
+    second: 360 spin special
   - first:
       74: 7400040
-    second: prepare
+    second: quick shoot
   - first:
       74: 7400042
     second: victory
@@ -477,7 +477,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: atk01
+      name: slash
       takeName: atk01
       internalID: 7400004
       firstFrame: 0
@@ -506,7 +506,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: atk02
+      name: long slash
       takeName: atk02
       internalID: 7400006
       firstFrame: 0
@@ -535,36 +535,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: atk03
-      takeName: atk03
-      internalID: 7400008
-      firstFrame: 0
-      lastFrame: 49
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: atk05
+      name: sheathe and slap
       takeName: atk05
       internalID: 7400010
       firstFrame: 0
@@ -622,7 +593,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: atk07
+      name: victory
       takeName: atk07
       internalID: 7400014
       firstFrame: 0
@@ -651,7 +622,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: atk08
+      name: huzzah
       takeName: atk08
       internalID: 7400016
       firstFrame: 0
@@ -680,36 +651,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: atk09
-      takeName: atk09
-      internalID: 7400018
-      firstFrame: 0
-      lastFrame: 184
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: special_21
+      name: front flip special
       takeName: mv_tar21
       internalID: 7400036
       firstFrame: 0
@@ -738,7 +680,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: special_22
+      name: 360 spin special
       takeName: mv_tar22
       internalID: 7400038
       firstFrame: 0
@@ -767,40 +709,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: prepare
+      name: quick shoot
       takeName: ready12
       internalID: 7400040
       firstFrame: 0
       lastFrame: 29
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: victory
-      takeName: win
-      internalID: 7400042
-      firstFrame: 0
-      lastFrame: 62
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
