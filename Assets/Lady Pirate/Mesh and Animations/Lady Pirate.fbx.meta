@@ -383,7 +383,7 @@ ModelImporter:
     second: sleep
   - first:
       74: 7400050
-    second: show
+    second: show off
   - first:
       95: 9500000
     second: //RootNode
@@ -431,7 +431,7 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -825,7 +825,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: show
+      name: show off
       takeName: bigshow
       internalID: 7400050
       firstFrame: 0
