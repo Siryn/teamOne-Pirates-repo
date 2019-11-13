@@ -10,11 +10,8 @@ public class Shoot : MonoBehaviour
     [SerializeField] Projectile projectile;
     [SerializeField] Transform hand;
     public Transform aimForNow;
-    //public AudioController audioReload;
-    //public AudioController audioFire;
-
-    //public Transform aimTarget;
-    //public Vector3 aimTargetOffset;
+    public AudioController audioReload;
+    public AudioController audioFire;
 
     public Reload reloader;
     public InputController inputController;
@@ -50,7 +47,7 @@ public class Shoot : MonoBehaviour
             return;
         }
         reloader.Reloading();
-       // audioReload.Play();
+        audioReload.Play();
 
     }
 
@@ -119,22 +116,7 @@ public class Shoot : MonoBehaviour
         nextFireAllowed = Time.time + rateOfFire;
         playerAnim.SetBool("isShooting", true);
         Invoke("TestingAnimTime", 0.45f);
-
-        //Projectile newBullet = Instantiate(projectile, muzzle.position, muzzle.rotation);
-
-        //Ray ray = Camera.main.ViewportPointToRay(new Vector3(.5f, .5f, 0));
-        //RaycastHit hit;
-        //Vector3 targetPosition = ray.GetPoint(500);
-        //if (Physics.Raycast(ray, out hit))
-        //  targetPosition = hit.point;
-
-        //newBullet.transform.LookAt(targetPosition);
-
-        //newBullet.transform.LookAt(aimForNow);
-
         Invoke("ResetShootingAnim", rateOfFire);
-        //FireEffect();
-       // audioFire.Play();
 
     }
 
@@ -146,18 +128,9 @@ public class Shoot : MonoBehaviour
     public void TestingAnimTime()
     {
         Projectile newBullet = Instantiate(projectile, muzzle.position, muzzle.rotation);
-
-        //Ray ray = Camera.main.ViewportPointToRay(new Vector3(.5f, .5f, 0));
-        //RaycastHit hit;
-        //Vector3 targetPosition = ray.GetPoint(500);
-        //if (Physics.Raycast(ray, out hit))
-        //  targetPosition = hit.point;
-
-        //newBullet.transform.LookAt(targetPosition);
-
         newBullet.transform.LookAt(aimForNow);
         FireEffect();
-        // audioFire.Play();
+        audioFire.Play();
     }
 
 }
