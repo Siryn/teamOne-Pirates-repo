@@ -2,20 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//////////////////////////////////////////////////////
-// Project: Major Project 1: Dam Buster
-//Name: Andrew Fletcher
-//Section: 2019FA.SGD.212.4103
-//Instructor: Aisha Eskandari
-// Date: 09/15/2019
-//////////////////////////////////////////////////////
 
 public class Projectile : MonoBehaviour
 {
     public float speed;
     public float timeToLive;
     public float damage;
-    public Transform bulletHole;
+    //public Transform bulletHole;
 
     private Vector3 destination;
 
@@ -51,8 +44,8 @@ public class Projectile : MonoBehaviour
 
         destination = hitInfo.point + hitInfo.normal * .0015f;
 
-        Transform hole = (Transform)Instantiate(bulletHole, destination, Quaternion.LookRotation(hitInfo.normal) * Quaternion.Euler(0, 180, 0));
-        hole.SetParent(hitInfo.transform);
+        //Transform hole = (Transform)Instantiate(bulletHole, destination, Quaternion.LookRotation(hitInfo.normal) * Quaternion.Euler(0, 180, 0));
+        //hole.SetParent(hitInfo.transform);
         //if (enemy == null)
             //return;
 

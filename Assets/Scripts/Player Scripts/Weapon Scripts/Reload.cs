@@ -2,14 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//////////////////////////////////////////////////////
-// Project: Major Project 1: Dam Buster
-//Name: Andrew Fletcher
-//Section: 2019FA.SGD.212.4103
-//Instructor: Aisha Eskandari
-// Date: 09/15/2019
-//////////////////////////////////////////////////////
-
 public class Reload : MonoBehaviour
 {
     public int maxAmmo;
@@ -17,7 +9,7 @@ public class Reload : MonoBehaviour
     public int clipSize;
     public Inventory inventory;
     public WeaponEnum weaponType;
-    public AmmoUI ammoUI;
+    //public AmmoUI ammoUI;
     public int shotsFiredInClip;
     public bool isReloading;
     public WeaponController weaponController;
@@ -71,14 +63,14 @@ public class Reload : MonoBehaviour
         print("Reload executed!");
         isReloading = false;
         shotsFiredInClip -= amount;
-        ammoUI.HandleOnAmmoChanged();
+        //ammoUI.HandleOnAmmoChanged();
         weaponController.canSwitch = true;
     }
 
     public void TakeFromClip(int amount)
     {
         shotsFiredInClip += amount;
-        ammoUI.HandleOnAmmoChanged();
+       // ammoUI.HandleOnAmmoChanged();
     }
 
     public void HandleOnAmmoChanged()

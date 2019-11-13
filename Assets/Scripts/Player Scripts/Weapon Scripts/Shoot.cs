@@ -2,13 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//////////////////////////////////////////////////////
-// Project: Major Project 1: Dam Buster
-//Name: Andrew Fletcher
-//Section: 2019FA.SGD.212.4103
-//Instructor: Aisha Eskandari
-// Date: 09/15/2019
-//////////////////////////////////////////////////////
 
 public class Shoot : MonoBehaviour
 {
@@ -16,11 +9,12 @@ public class Shoot : MonoBehaviour
     [SerializeField] float rateOfFire;
     [SerializeField] Projectile projectile;
     [SerializeField] Transform hand;
-    public AudioController audioReload;
-    public AudioController audioFire;
+    public Transform aimForNow;
+    //public AudioController audioReload;
+    //public AudioController audioFire;
 
-    public Transform aimTarget;
-    public Vector3 aimTargetOffset;
+    //public Transform aimTarget;
+    //public Vector3 aimTargetOffset;
 
     public Reload reloader;
     public InputController inputController;
@@ -28,11 +22,13 @@ public class Shoot : MonoBehaviour
     public States states;
 
     public ParticleSystem muzzleFireParticleSystem;
-    private bool isPlayerAlive = true;
+   // private bool isPlayerAlive = true;
     private float nextFireAllowed;
     
     public Transform muzzle;
     public bool canFire;
+
+    public Animator playerAnim;
 
     public void Equip()
     {
@@ -54,7 +50,7 @@ public class Shoot : MonoBehaviour
             return;
         }
         reloader.Reloading();
-        audioReload.Play();
+       // audioReload.Play();
 
     }
 
@@ -62,6 +58,7 @@ public class Shoot : MonoBehaviour
     {
         weaponController = FindObjectOfType<WeaponController>();
         reloader = GetComponent<Reload>();
+        canFire = true;
     }
 
     public void Update()
@@ -72,8 +69,8 @@ public class Shoot : MonoBehaviour
             Reload();
         }
 
-        if (!isPlayerAlive)
-            return;
+        //if (!isPlayerAlive)
+          //  return;
 
         if (inputController.mouseWheelDown)
             weaponController.SwitchWeapon(1);
@@ -90,6 +87,7 @@ public class Shoot : MonoBehaviour
         if (inputController.fire1 && canFire == true)
         {
             weaponController.activeWeapon.Fire();
+            print("worked");
         }
 
     }
@@ -119,21 +117,47 @@ public class Shoot : MonoBehaviour
         reloader.TakeFromClip(1);
 
         nextFireAllowed = Time.time + rateOfFire;
+        playerAnim.SetBool("isShooting", true);
+        Invoke("TestingAnimTime", 0.45f);
 
+        //Projectile newBullet = Instantiate(projectile, muzzle.position, muzzle.rotation);
 
+        //Ray ray = Camera.main.ViewportPointToRay(new Vector3(.5f, .5f, 0));
+        //RaycastHit hit;
+        //Vector3 targetPosition = ray.GetPoint(500);
+        //if (Physics.Raycast(ray, out hit))
+        //  targetPosition = hit.point;
+
+        //newBullet.transform.LookAt(targetPosition);
+
+        //newBullet.transform.LookAt(aimForNow);
+
+        Invoke("ResetShootingAnim", rateOfFire);
+        //FireEffect();
+       // audioFire.Play();
+
+    }
+
+    public void ResetShootingAnim()
+    {
+        playerAnim.SetBool("isShooting", false);
+    }
+
+    public void TestingAnimTime()
+    {
         Projectile newBullet = Instantiate(projectile, muzzle.position, muzzle.rotation);
 
-        Ray ray = Camera.main.ViewportPointToRay(new Vector3(.5f, .5f, 0));
-        RaycastHit hit;
-        Vector3 targetPosition = ray.GetPoint(500);
-        if (Physics.Raycast(ray, out hit))
-            targetPosition = hit.point;
+        //Ray ray = Camera.main.ViewportPointToRay(new Vector3(.5f, .5f, 0));
+        //RaycastHit hit;
+        //Vector3 targetPosition = ray.GetPoint(500);
+        //if (Physics.Raycast(ray, out hit))
+        //  targetPosition = hit.point;
 
-        newBullet.transform.LookAt(targetPosition);
+        //newBullet.transform.LookAt(targetPosition);
 
+        newBullet.transform.LookAt(aimForNow);
         FireEffect();
-        audioFire.Play();
-
+        // audioFire.Play();
     }
 
 }

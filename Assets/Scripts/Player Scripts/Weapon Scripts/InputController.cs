@@ -16,7 +16,7 @@ public class InputController : MonoBehaviour
     public float horizontal;
     public Vector2 mouseInput;
     public bool fire1;
-    public bool fire2;
+    //public bool fire2;
     public bool reload;
     public bool isWalking;
     public bool isSpriting;
@@ -39,7 +39,7 @@ public class InputController : MonoBehaviour
             horizontal = Input.GetAxis("Horizontal");
             mouseInput = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
             fire1 = Input.GetButton("Fire1");
-            fire2 = Input.GetButton("Fire2");
+            //fire2 = Input.GetButton("Fire2");
             reload = Input.GetKey(KeyCode.R);
             isWalking = Input.GetKey(KeyCode.LeftAlt);
             isSpriting = Input.GetKey(KeyCode.LeftShift);

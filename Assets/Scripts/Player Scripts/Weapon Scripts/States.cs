@@ -2,13 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//////////////////////////////////////////////////////
-// Project: Major Project 1: Dam Buster
-//Name: Andrew Fletcher
-//Section: 2019FA.SGD.212.4103
-//Instructor: Aisha Eskandari
-// Date: 09/15/2019
-//////////////////////////////////////////////////////
 
 public class States : MonoBehaviour
 {
@@ -50,11 +43,11 @@ public class States : MonoBehaviour
         if (inputController.fire1)
             weaponState = EWeaponState.FIRING;
 
-        if (inputController.fire2)
-            weaponState = EWeaponState.AIMING;
+        //if (inputController.fire2)
+           // weaponState = EWeaponState.AIMING;
 
-        if (inputController.fire1 && inputController.fire2)
-            weaponState = EWeaponState.AIMEDFIRING;
+       // if (inputController.fire1 && inputController.fire2)
+           // weaponState = EWeaponState.AIMEDFIRING;
     }
 
     void SetMoveState()

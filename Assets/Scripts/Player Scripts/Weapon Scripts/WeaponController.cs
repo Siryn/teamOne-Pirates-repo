@@ -3,18 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//////////////////////////////////////////////////////
-// Project: Major Project 1: Dam Buster
-//Name: Andrew Fletcher
-//Section: 2019FA.SGD.212.4103
-//Instructor: Aisha Eskandari
-// Date: 09/15/2019
-//////////////////////////////////////////////////////
 
 public class WeaponController : MonoBehaviour
 {
     public Shoot activeWeapon;
-    public Text weaponText;
+    //public Text weaponText;
     public float weaponSwitchTime;
     public bool canSwitch;
 
@@ -24,7 +17,7 @@ public class WeaponController : MonoBehaviour
     int currentWeaponIndex;
     public bool canfire;
     Transform weaponHolster;
-    public AmmoUI ammoUI;
+    //public AmmoUI ammoUI;
 
     private void Awake()
     {
@@ -72,7 +65,7 @@ public class WeaponController : MonoBehaviour
         activeWeapon = weapons[index];
         activeWeapon.Equip();
         weapons[index].gameObject.SetActive(true);
-        weaponText.text = weapons[index].name.ToString();
+        //weaponText.text = weapons[index].name.ToString();
         
     }
 }
