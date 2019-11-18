@@ -19,6 +19,9 @@ public class EnemyScan : MonoBehaviour
 
     public Transform player;
 
+    public bool meleeEnemy;
+    public bool rangedEnemy;
+
     void Start()
     {
         playedOnce = false;
@@ -43,10 +46,13 @@ public class EnemyScan : MonoBehaviour
 
         else if(foundPlayer == true)
         {
-            Vector3 playerPosition = player.position;
-            playerPosition.x -= 1;
+            if (meleeEnemy)
+            {
+                Vector3 playerPosition = player.position;
+                playerPosition.x -= 1;
 
-            transform.position = Vector3.MoveTowards(transform.position, playerPosition, Time.deltaTime * speed);
+                transform.position = Vector3.MoveTowards(transform.position, playerPosition, Time.deltaTime * speed);
+            }
         }
     }
 
