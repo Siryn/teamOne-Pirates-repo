@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class WeaponController : MonoBehaviour
 {
     public Shoot activeWeapon;
+    public EnemyShooter enemyActiveWeapon;
     //public Text weaponText;
     public float weaponSwitchTime;
     public bool canSwitch;

@@ -53,7 +53,7 @@ public class Shoot : MonoBehaviour
 
     void Awake()
     {
-        weaponController = FindObjectOfType<WeaponController>();
+        //weaponController = FindObjectOfType<WeaponController>();
         reloader = GetComponent<Reload>();
         canFire = true;
     }
