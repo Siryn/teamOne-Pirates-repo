@@ -8,7 +8,7 @@ public class WeaponController : MonoBehaviour
 {
     public Shoot activeWeapon;
     public EnemyShooter enemyActiveWeapon;
-    //public Text weaponText;
+    public Text weaponText;
     public float weaponSwitchTime;
     public bool canSwitch;
 
@@ -18,7 +18,7 @@ public class WeaponController : MonoBehaviour
     int currentWeaponIndex;
     public bool canfire;
     Transform weaponHolster;
-    //public AmmoUI ammoUI;
+    public AmmoUI ammoUI;
 
     private void Awake()
     {
@@ -66,7 +66,10 @@ public class WeaponController : MonoBehaviour
         activeWeapon = weapons[index];
         activeWeapon.Equip();
         weapons[index].gameObject.SetActive(true);
-        //weaponText.text = weapons[index].name.ToString();
-        
+        weaponText.text = weapons[index].name.ToString();
+        Reload reloader = weapons[index].GetComponent<Reload>();
+        int amountInInventory = reloader.roundsRemainingInInventory;
+        int amountInClip = reloader.roundsRemainingInClip;
+        ammoUI.text.text = string.Format("{0}/{1}", amountInClip, amountInInventory);
     }
 }

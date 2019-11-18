@@ -6,5 +6,5 @@ public enum WeaponEnum
 {
     HANDGUN,
     SHOTGUN,
-    MINIGUN,
+    SWORD,
 }

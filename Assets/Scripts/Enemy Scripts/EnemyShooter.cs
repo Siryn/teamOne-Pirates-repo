@@ -86,7 +86,7 @@ public class EnemyShooter : MonoBehaviour
             if (reloader.roundsRemainingInClip == 0)
                 return;
 
-            reloader.TakeFromClip(1);
+            reloader.TakeFromClipEnemy(1);
         }
         nextFireAllowed = Time.time + rateOfFire;
 

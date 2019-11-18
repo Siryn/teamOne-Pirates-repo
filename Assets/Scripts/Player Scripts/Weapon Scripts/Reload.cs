@@ -9,7 +9,7 @@ public class Reload : MonoBehaviour
     public int clipSize;
     public Inventory inventory;
     public WeaponEnum weaponType;
-    //public AmmoUI ammoUI;
+    public AmmoUI ammoUI;
     public int shotsFiredInClip;
     public bool isReloading;
     public WeaponController weaponController;
@@ -63,14 +63,19 @@ public class Reload : MonoBehaviour
         print("Reload executed!");
         isReloading = false;
         shotsFiredInClip -= amount;
-        //ammoUI.HandleOnAmmoChanged();
+        ammoUI.HandleOnAmmoChanged();
         weaponController.canSwitch = true;
     }
 
     public void TakeFromClip(int amount)
     {
         shotsFiredInClip += amount;
-       // ammoUI.HandleOnAmmoChanged();
+        ammoUI.HandleOnAmmoChanged();
+    }
+
+    public void TakeFromClipEnemy(int amount)
+    {
+        shotsFiredInClip += amount;
     }
 
     public void HandleOnAmmoChanged()

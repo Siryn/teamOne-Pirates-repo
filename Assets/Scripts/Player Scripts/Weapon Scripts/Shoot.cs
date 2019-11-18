@@ -53,7 +53,6 @@ public class Shoot : MonoBehaviour
 
     void Awake()
     {
-        //weaponController = FindObjectOfType<WeaponController>();
         reloader = GetComponent<Reload>();
         canFire = true;
     }
@@ -80,6 +79,13 @@ public class Shoot : MonoBehaviour
 
         if (!weaponController.canfire)
             return;
+
+        if (inputController.fire1 && canFire == true && weaponController.activeWeapon.name == "Sword")
+        {
+            weaponController.activeWeapon.SwordAttack();
+            print("sword attack");
+            return;
+        }
 
         if (inputController.fire1 && canFire == true)
         {
@@ -131,6 +137,22 @@ public class Shoot : MonoBehaviour
         newBullet.transform.LookAt(aimForNow);
         FireEffect();
         audioFire.Play();
+    }
+
+    public virtual void SwordAttack()
+    {
+        if (Time.time < nextFireAllowed)
+            return;
+
+        nextFireAllowed = Time.time + rateOfFire;
+        print("sword did attack");
+        playerAnim.SetBool("swordAttack", true);
+        Invoke("ResetSwordBool", rateOfFire);
+    }
+
+    public void ResetSwordBool()
+    {
+        playerAnim.SetBool("swordAttack", false);
     }
 
 }
