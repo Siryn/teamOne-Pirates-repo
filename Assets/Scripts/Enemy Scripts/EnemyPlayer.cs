@@ -18,6 +18,7 @@ public class EnemyPlayer : MonoBehaviour
     public event System.Action<PlayerMove> OnTargetSelected;
 
     public EnemyHealth enemyhealth;
+    public bool playerInRange;
 
     EnemyState m_EnemyState;
     public EnemyState enemyState
@@ -79,8 +80,10 @@ public class EnemyPlayer : MonoBehaviour
 
     public void SetDestinationToPriorityTarget(Transform player)
     {
-        pathFinder.Agent.speed = walkSpeed;
-        pathFinder.SetTarget(player.position);
+        Vector3 offSetTarget = player.position;
+        offSetTarget.x -= 1.5f;
+        pathFinder.SetTarget(offSetTarget);
+        playerInRange = true;
     }
 
     private void SelectClosestTarget()

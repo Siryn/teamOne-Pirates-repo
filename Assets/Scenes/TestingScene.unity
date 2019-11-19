@@ -6698,6 +6698,7 @@ MonoBehaviour:
   wayPointController: {fileID: 1110730169}
   waitTimeMin: 1
   waitTimeMax: 3
+  enemyShoot: {fileID: 685539031}
 --- !u!136 &685539027
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -18124,6 +18125,7 @@ MonoBehaviour:
   wayPointController: {fileID: 1694091831}
   waitTimeMin: 1
   waitTimeMax: 3
+  enemyShoot: {fileID: 1429407825}
 --- !u!114 &1429407828
 MonoBehaviour:
   m_ObjectHideFlags: 0

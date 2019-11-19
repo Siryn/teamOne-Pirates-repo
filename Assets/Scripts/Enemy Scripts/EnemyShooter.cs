@@ -118,7 +118,7 @@ public class EnemyShooter : MonoBehaviour
         else
         {
             Transform player = enemyPlayer.priorityTarget.transform;
-
+            enemyPlayer.playerInRange = false;
             enemyPlayer.SetDestinationToPriorityTarget(player);
             print("out of range");
         }

@@ -13,6 +13,8 @@ public class EnemyPatrol : MonoBehaviour
 
     NavAgent pathFinder;
 
+    public EnemyShoot enemyShoot;
+
     EnemyPlayer m_EnemyPlayer;
     public EnemyPlayer enemyPlayer
     {
@@ -41,7 +43,15 @@ public class EnemyPatrol : MonoBehaviour
 
     private void EnemyPlayer_OnTargetSelected(PlayerMove obj)
     {
-        pathFinder.Agent.isStopped = true;
+        //HERE IS ERROR YOU ARE LOOKING FOR
+        if (enemyShoot.hasSword)
+        {
+
+        }
+        else
+        {
+            pathFinder.Agent.isStopped = true;
+        }
     }
 
     private void Enemyhealth_OnDeath()
@@ -56,10 +66,13 @@ public class EnemyPatrol : MonoBehaviour
 
     private void PathFinder_OnDestinationReached()
     {
-        //assume we are patrolling
-        //GameManager.Instance.Timer.Add(wayPointController.SetNextWaypoint, UnityEngine.Random.Range(waitTimeMin, waitTimeMax));
-        float random = UnityEngine.Random.Range(waitTimeMin, waitTimeMax);
-        Invoke("NextWayPoint", random);
+        if (enemyPlayer.playerInRange == false)
+        {
+            //assume we are patrolling
+            //GameManager.Instance.Timer.Add(wayPointController.SetNextWaypoint, UnityEngine.Random.Range(waitTimeMin, waitTimeMax));
+            float random = UnityEngine.Random.Range(waitTimeMin, waitTimeMax);
+            Invoke("NextWayPoint", random);
+        }
     }
 
     public void NextWayPoint()
