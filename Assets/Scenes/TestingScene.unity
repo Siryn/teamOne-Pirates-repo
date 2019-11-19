@@ -6766,6 +6766,7 @@ MonoBehaviour:
   runSpeed: 10
   priorityTarget: {fileID: 0}
   enemyhealth: {fileID: 0}
+  playerInRange: 0
 --- !u!114 &685539031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18191,6 +18192,7 @@ MonoBehaviour:
   runSpeed: 10
   priorityTarget: {fileID: 0}
   enemyhealth: {fileID: 0}
+  playerInRange: 0
 --- !u!1 &1469446024
 GameObject:
   m_ObjectHideFlags: 0
