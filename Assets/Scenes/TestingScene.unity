@@ -129,7 +129,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 590618}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SoundEffects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -856,10 +856,12 @@ MonoBehaviour:
   inputController: {fileID: 1596373584}
   weaponController: {fileID: 1596373582}
   states: {fileID: 1596373581}
+  enemyHealth: {fileID: 0}
   muzzleFireParticleSystem: {fileID: 690292137}
   muzzle: {fileID: 690292135}
   canFire: 0
   playerAnim: {fileID: 2028803138}
+  swordDamage: 0
 --- !u!114 &275708830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -924,6 +926,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: one eyed pirate
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 702b3c9e4a367bc45861329c6aa3d77b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 702b3c9e4a367bc45861329c6aa3d77b,
         type: 3}
@@ -1405,7 +1412,8 @@ GameObject:
   - component: {fileID: 685539026}
   - component: {fileID: 685539027}
   - component: {fileID: 685539031}
-  m_Layer: 0
+  - component: {fileID: 685539032}
+  m_Layer: 9
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1540,11 +1548,29 @@ MonoBehaviour:
   weaponText: {fileID: 0}
   weaponSwitchTime: 1
   canSwitch: 0
+  swordHit: 0
   canfire: 0
   ammoUI: {fileID: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
   shootingSpeed: 1
   burstDurationMax: 0.3
   burstDurationMin: 0.7
+--- !u!114 &685539032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685539023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d87e492abbe42143a429ed795228ba8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 10
+  currentHp: 10
 --- !u!1 &688691966
 GameObject:
   m_ObjectHideFlags: 0
@@ -6398,7 +6424,7 @@ GameObject:
   - component: {fileID: 774655107}
   - component: {fileID: 774655109}
   - component: {fileID: 774655108}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: HandGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7078,7 +7104,7 @@ GameObject:
   - component: {fileID: 1156078510}
   - component: {fileID: 1156078512}
   - component: {fileID: 1156078511}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12111,10 +12137,12 @@ MonoBehaviour:
   inputController: {fileID: 1596373584}
   weaponController: {fileID: 1596373582}
   states: {fileID: 1596373581}
+  enemyHealth: {fileID: 0}
   muzzleFireParticleSystem: {fileID: 690292137}
   muzzle: {fileID: 690292135}
   canFire: 0
   playerAnim: {fileID: 2028803138}
+  swordDamage: 0
 --- !u!114 &1218205145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12192,10 +12220,12 @@ MonoBehaviour:
   inputController: {fileID: 1596373584}
   weaponController: {fileID: 1596373582}
   states: {fileID: 1596373581}
+  enemyHealth: {fileID: 0}
   muzzleFireParticleSystem: {fileID: 690292137}
   muzzle: {fileID: 690292135}
   canFire: 0
   playerAnim: {fileID: 2028803138}
+  swordDamage: 5
 --- !u!114 &1276995710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12541,8 +12571,12 @@ MonoBehaviour:
   weaponText: {fileID: 1188420349}
   weaponSwitchTime: 0
   canSwitch: 0
+  swordHit: 0
   canfire: 0
   ammoUI: {fileID: 958435879}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!114 &1596373584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12576,7 +12610,7 @@ GameObject:
   - component: {fileID: 1612616302}
   - component: {fileID: 1612616304}
   - component: {fileID: 1612616303}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: HandGunReload
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12912,7 +12946,7 @@ GameObject:
   - component: {fileID: 1802471014}
   - component: {fileID: 1802471016}
   - component: {fileID: 1802471015}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: HandGunFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13144,7 +13178,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1908552365}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Weapons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13238,7 +13272,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1932734949}
   - component: {fileID: 1932734950}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Inventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}

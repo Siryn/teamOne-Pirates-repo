@@ -17,6 +17,7 @@ public class Shoot : MonoBehaviour
     public InputController inputController;
     public WeaponController weaponController;
     public States states;
+    public EnemyHealth enemyHealth;
 
     public ParticleSystem muzzleFireParticleSystem;
    // private bool isPlayerAlive = true;
@@ -26,6 +27,8 @@ public class Shoot : MonoBehaviour
     public bool canFire;
 
     public Animator playerAnim;
+
+    public int swordDamage;
 
     public void Equip()
     {
@@ -59,6 +62,7 @@ public class Shoot : MonoBehaviour
 
     public void Update()
     {
+
         if (inputController.reload)
         {
 
@@ -147,6 +151,7 @@ public class Shoot : MonoBehaviour
         nextFireAllowed = Time.time + rateOfFire;
         print("sword did attack");
         playerAnim.SetBool("swordAttack", true);
+        weaponController.SwordDamage();
         Invoke("ResetSwordBool", rateOfFire);
     }
 

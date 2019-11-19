@@ -98,6 +98,9 @@ public class EnemyPlayer : MonoBehaviour
         if (priorityTarget == null)
             return;
 
-        transform.LookAt(priorityTarget.transform.position);
+        Vector3 targetPosition = priorityTarget.transform.position;
+        targetPosition.y = 0;
+        targetPosition.x = 0;
+        transform.LookAt(targetPosition);
     }
 }

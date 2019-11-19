@@ -19,6 +19,7 @@ public class WeaponController : MonoBehaviour
     public bool canfire;
     Transform weaponHolster;
     public AmmoUI ammoUI;
+    public LayerMask layerMask;
 
     private void Awake()
     {
@@ -71,5 +72,18 @@ public class WeaponController : MonoBehaviour
         int amountInInventory = reloader.roundsRemainingInInventory;
         int amountInClip = reloader.roundsRemainingInClip;
         ammoUI.text.text = string.Format("{0}/{1}", amountInClip, amountInInventory);
+    }
+
+    public void SwordDamage()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(gameObject.transform.position, transform.TransformDirection(Vector3.right), out hit, 2f, layerMask))
+        {
+            EnemyHealth enemy = hit.collider.gameObject.GetComponent<EnemyHealth>();
+            enemy.currentHp -= activeWeapon.swordDamage;
+            enemy.CheckDeath();
+            print("EnemyWouldTakeDamage");
+        }
     }
 }
