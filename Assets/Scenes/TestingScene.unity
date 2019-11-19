@@ -6763,6 +6763,7 @@ MonoBehaviour:
   playerScanner: {fileID: 1917727168}
   walkSpeed: 5
   runSpeed: 10
+  priorityTarget: {fileID: 0}
   enemyhealth: {fileID: 0}
 --- !u!114 &685539031
 MonoBehaviour:
@@ -11734,9 +11735,10 @@ MonoBehaviour:
   reloader: {fileID: 0}
   canFire: 0
   muzzle: {fileID: 1156078510}
+  enemyPlayer: {fileID: 685539030}
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   swordDamage: 0
 --- !u!114 &774655109
 MonoBehaviour:
@@ -18185,6 +18187,7 @@ MonoBehaviour:
   playerScanner: {fileID: 332670613}
   walkSpeed: 5
   runSpeed: 10
+  priorityTarget: {fileID: 0}
   enemyhealth: {fileID: 0}
 --- !u!1 &1469446024
 GameObject:
@@ -18385,6 +18388,7 @@ MonoBehaviour:
   reloader: {fileID: 0}
   canFire: 0
   muzzle: {fileID: 47088814}
+  enemyPlayer: {fileID: 1429407831}
   layerMask:
     serializedVersion: 2
     m_Bits: 256
@@ -18465,9 +18469,10 @@ MonoBehaviour:
   reloader: {fileID: 0}
   canFire: 0
   muzzle: {fileID: 1156078510}
+  enemyPlayer: {fileID: 685539030}
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   swordDamage: 0
 --- !u!114 &1581094579
 MonoBehaviour:

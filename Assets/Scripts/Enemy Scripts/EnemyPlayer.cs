@@ -12,7 +12,7 @@ public class EnemyPlayer : MonoBehaviour
     public float walkSpeed = 5;
     public float runSpeed = 10;
 
-    PlayerMove priorityTarget;
+    public PlayerMove priorityTarget;
     List<PlayerMove> myTargets;
 
     public event System.Action<PlayerMove> OnTargetSelected;
@@ -77,9 +77,10 @@ public class EnemyPlayer : MonoBehaviour
         }
     }
 
-    private void SetDestinationToPriorityTarget()
+    public void SetDestinationToPriorityTarget(Transform player)
     {
-        pathFinder.SetTarget(priorityTarget.transform.position);
+        pathFinder.Agent.speed = walkSpeed;
+        pathFinder.SetTarget(player.position);
     }
 
     private void SelectClosestTarget()
@@ -98,9 +99,9 @@ public class EnemyPlayer : MonoBehaviour
         if (priorityTarget == null)
             return;
 
-        Vector3 targetPosition = priorityTarget.transform.position;
-        targetPosition.y = 0;
-        targetPosition.x = 0;
-        transform.LookAt(targetPosition);
+            Vector3 targetPosition = priorityTarget.transform.position;
+            targetPosition.y = 0;
+            targetPosition.x = 0;
+            transform.LookAt(targetPosition);
     }
 }

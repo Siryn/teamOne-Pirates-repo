@@ -16,13 +16,12 @@ public class EnemyShooter : MonoBehaviour
     public Vector3 aimTargetOffset;
 
     public Reload reloader;
-    //public InputController inputController;
     private ParticleSystem muzzleFireParticleSystem;
 
     float nextFireAllowed;
     public bool canFire;
     public Transform muzzle;
-
+    public EnemyPlayer enemyPlayer;
     public LayerMask layerMask;
     public int swordDamage;
 
@@ -104,8 +103,6 @@ public class EnemyShooter : MonoBehaviour
         if (Time.time < nextFireAllowed)
             return;
 
-        print("Got to here");
-
         nextFireAllowed = Time.time + rateOfFire;
 
         RaycastHit hit;
@@ -120,6 +117,9 @@ public class EnemyShooter : MonoBehaviour
         }
         else
         {
+            Transform player = enemyPlayer.priorityTarget.transform;
+
+            enemyPlayer.SetDestinationToPriorityTarget(player);
             print("out of range");
         }
     }
