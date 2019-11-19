@@ -23,6 +23,9 @@ public class EnemyShooter : MonoBehaviour
     public bool canFire;
     public Transform muzzle;
 
+    public LayerMask layerMask;
+    public int swordDamage;
+
     public void Equip()
     {
         transform.SetParent(hand);
@@ -33,6 +36,11 @@ public class EnemyShooter : MonoBehaviour
     void OnDisable()
     {
 
+    }
+
+    private void Update()
+    {
+        Debug.DrawRay(gameObject.transform.position, transform.TransformDirection(Vector3.forward), Color.blue);
     }
 
     public void Reload()
@@ -52,16 +60,6 @@ public class EnemyShooter : MonoBehaviour
         reloader = GetComponent<Reload>();
         muzzleFireParticleSystem = muzzle.GetComponent<ParticleSystem>();
     }
-
-   /* public void Update()
-    {
-        if (inputController.reload)
-        {
-
-            Reload();
-        }
-
-    }*/
 
     void FireEffect()
     {
@@ -90,7 +88,7 @@ public class EnemyShooter : MonoBehaviour
         }
         nextFireAllowed = Time.time + rateOfFire;
 
-        bool isLocalPlayerControlled = aimTarget == null;
+        //bool isLocalPlayerControlled = aimTarget == null;
 
         muzzle.LookAt(aimTarget.position + aimTargetOffset);
 
@@ -99,5 +97,30 @@ public class EnemyShooter : MonoBehaviour
         FireEffect();
         audioFire.Play();
         canFire = true;
+    }
+
+    public virtual void SwordAttack(int damage)
+    {
+        if (Time.time < nextFireAllowed)
+            return;
+
+        print("Got to here");
+
+        nextFireAllowed = Time.time + rateOfFire;
+
+        RaycastHit hit;
+
+        if (Physics.Raycast(gameObject.transform.position, transform.TransformDirection(Vector3.forward), out hit, 2f, layerMask))
+        {
+            PlayerHealth player = hit.collider.gameObject.GetComponent<PlayerHealth>();
+            player.currentHp -= damage;
+            player.CheckDeath();
+            print("PlayerWouldTakeDamage");
+
+        }
+        else
+        {
+            print("out of range");
+        }
     }
 }

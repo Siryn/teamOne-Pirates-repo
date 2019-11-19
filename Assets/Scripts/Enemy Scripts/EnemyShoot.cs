@@ -13,6 +13,7 @@ public class EnemyShoot : WeaponController
 
     EnemyPlayer enemyPlayer;
     bool shouldFire;
+    public bool hasSword;
 
     private void Start()
     {
@@ -37,8 +38,15 @@ public class EnemyShoot : WeaponController
         shouldFire = true;
 
         //GameManager.Instance.Timer.Add(EndBurst, Random.Range(burstDurationMin, burstDurationMax));
-        float random = Random.Range(burstDurationMin, burstDurationMax);
-        Invoke("EndBurst", random);
+        if (hasSword)
+        {
+            Invoke("EndBurst", .4f);
+        }
+        else
+        {
+            float random = Random.Range(burstDurationMin, burstDurationMax);
+            Invoke("EndBurst", random);
+        }
     }
 
     void EndBurst()
@@ -61,7 +69,11 @@ public class EnemyShoot : WeaponController
     {
         if (!shouldFire || !canfire) //|| !enemyPlayer.enemyhealth.IsAlive)
             return;
-
+        if(hasSword)
+        {
+            enemyActiveWeapon.SwordAttack(enemyActiveWeapon.swordDamage);
+        }
+        else
         enemyActiveWeapon.Fire();
     }
 }
