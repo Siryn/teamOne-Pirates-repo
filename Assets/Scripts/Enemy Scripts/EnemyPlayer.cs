@@ -11,6 +11,7 @@ public class EnemyPlayer : MonoBehaviour
     [SerializeField] Scanner playerScanner;
     public float walkSpeed = 5;
     public float runSpeed = 10;
+    public float damping;
 
     public PlayerMove priorityTarget;
     List<PlayerMove> myTargets;
@@ -102,9 +103,9 @@ public class EnemyPlayer : MonoBehaviour
         if (priorityTarget == null)
             return;
 
-            Vector3 targetPosition = priorityTarget.transform.position;
-            targetPosition.y = 0;
-            targetPosition.x = 0;
-            transform.LookAt(targetPosition);
+        Vector3 lookPos = priorityTarget.transform.position - transform.position;
+        lookPos.y = 0;
+        Quaternion targetRotation = Quaternion.LookRotation(lookPos);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * damping);
     }
 }

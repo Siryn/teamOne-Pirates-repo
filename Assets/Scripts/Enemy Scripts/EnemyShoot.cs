@@ -14,11 +14,13 @@ public class EnemyShoot : WeaponController
     EnemyPlayer enemyPlayer;
     bool shouldFire;
     public bool hasSword;
+    public Animator anim;
 
     private void Start()
     {
         enemyPlayer = GetComponent<EnemyPlayer>();
         enemyPlayer.OnTargetSelected += EnemyPlayer_OnTargetSelected;
+        anim.SetBool("isWalking", true);
     }
 
     private void EnemyPlayer_OnTargetSelected(PlayerMove target)
@@ -69,11 +71,35 @@ public class EnemyShoot : WeaponController
     {
         if (!shouldFire || !canfire) //|| !enemyPlayer.enemyhealth.IsAlive)
             return;
-        if(hasSword)
+        if (hasSword)
         {
             enemyActiveWeapon.SwordAttack(enemyActiveWeapon.swordDamage);
+            anim.SetBool("isWalking", false);
+            anim.SetBool("isSlashing", true);
+            Invoke("ResetAnimBools", 0.5f);
         }
         else
+        {
+            //enemyActiveWeapon.Fire();
+            Invoke("TestAnimShootTiming", 1.2f);
+            anim.SetBool("isWalking", false);
+            anim.SetBool("isShooting", true);
+            Invoke("ResetAnimBools", 1.3f);
+        }
+    }
+
+    public void ResetAnimBools()
+    {
+        if(hasSword)
+        {
+            anim.SetBool("isWalking", true);
+        }
+        anim.SetBool("isSlashing", false);
+        anim.SetBool("isShooting", false);
+    }
+
+    public void TestAnimShootTiming()
+    {
         enemyActiveWeapon.Fire();
     }
 }

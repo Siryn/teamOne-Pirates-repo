@@ -88,8 +88,9 @@ public class EnemyShooter : MonoBehaviour
         nextFireAllowed = Time.time + rateOfFire;
 
         //bool isLocalPlayerControlled = aimTarget == null;
+        Vector3 aim =  new Vector3(aimTarget.position.x, this.transform.position.y, aimTarget.position.z);
 
-        muzzle.LookAt(aimTarget.position + aimTargetOffset);
+        muzzle.LookAt(aim + aimTargetOffset);
 
         Projectile newBullet = Instantiate(projectile, muzzle.position, muzzle.rotation);
 
