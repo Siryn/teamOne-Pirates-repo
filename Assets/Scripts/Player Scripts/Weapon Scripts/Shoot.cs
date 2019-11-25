@@ -30,6 +30,8 @@ public class Shoot : MonoBehaviour
 
     public int swordDamage;
 
+    public HandgunReload hgReload;
+
     public void Equip()
     {
         transform.SetParent(hand);
@@ -50,24 +52,24 @@ public class Shoot : MonoBehaviour
             return;
         }
         reloader.Reloading();
-        audioReload.Play();
+        //audioReload.Play();
 
     }
 
     void Awake()
     {
-        reloader = GetComponent<Reload>();
+        //reloader = GetComponent<Reload>();
         canFire = true;
     }
 
     public void Update()
     {
 
-        if (inputController.reload)
+        /*if (inputController.reload)
         {
 
             Reload();
-        }
+        }*/
 
         //if (!isPlayerAlive)
           //  return;
@@ -120,8 +122,9 @@ public class Shoot : MonoBehaviour
             Reload();
             return;
         }
-
+        
         reloader.TakeFromClip(1);
+        
 
         nextFireAllowed = Time.time + rateOfFire;
         playerAnim.SetBool("isShooting", true);
@@ -141,6 +144,12 @@ public class Shoot : MonoBehaviour
         newBullet.transform.LookAt(aimForNow);
         FireEffect();
         audioFire.Play();
+        if (reloader.shotsFiredInClip == 3)
+        {
+            //reloader.Reloading();
+            hgReload.ReloadHandGun();
+            weaponController.SwitchWeapon(1);
+        }
     }
 
     public virtual void SwordAttack()

@@ -50,7 +50,7 @@ public class Reload : MonoBehaviour
 
         isReloading = true;
         print("Reload started");
-        weaponController.canSwitch = false;
+        //weaponController.canSwitch = false;
         StartCoroutine(ExecuteReload(inventory.TakeFromContainer(containerItemId, clipSize - roundsRemainingInClip)));
 
 

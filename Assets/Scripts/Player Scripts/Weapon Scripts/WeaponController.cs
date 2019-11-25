@@ -12,8 +12,7 @@ public class WeaponController : MonoBehaviour
     public float weaponSwitchTime;
     public bool canSwitch;
 
-    Shoot[] weapons;
-
+    public Shoot[] weapons;
 
     int currentWeaponIndex;
     public bool canfire;
@@ -61,12 +60,16 @@ public class WeaponController : MonoBehaviour
 
     internal void Equip(int index)
     {
+        print(index);
         DeactivateWeaopns();
         canfire = true;
         canSwitch = true;
         activeWeapon = weapons[index];
         activeWeapon.Equip();
-        weapons[index].gameObject.SetActive(true);
+        for (int i = 0; i < weapons.Length; i++)
+        {
+            weapons[i].gameObject.SetActive(true);
+        }
         weaponText.text = weapons[index].name.ToString();
         Reload reloader = weapons[index].GetComponent<Reload>();
         int amountInInventory = reloader.roundsRemainingInInventory;
