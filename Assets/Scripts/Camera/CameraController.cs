@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public float xMax;
-    public float yMax;
-    public float xMin;
-    public float yMin;
-    public float offset;
+    public GameObject player;
 
-    public Transform target;
+    private Vector3 offset;
+
+    private void Start()
+    {
+        offset = transform.position - player.transform.position;
+    }
 
     void LateUpdate()
     {
-        transform.position = new Vector3(Mathf.Clamp((target.position.x + offset), xMin, xMax), Mathf.Clamp(target.position.y, yMin, yMax), transform.position.z);
+        transform.position = player.transform.position + offset;
     }
 }
