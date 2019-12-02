@@ -88,7 +88,6 @@ GameObject:
   - component: {fileID: 4950153310883960}
   - component: {fileID: 33056077172646336}
   - component: {fileID: 23546939335975542}
-  - component: {fileID: 64942963007595482}
   m_Layer: 0
   m_Name: BP_white_wine_color_2
   m_TagString: Untagged
@@ -156,17 +155,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &64942963007595482
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1740800178679210}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300000, guid: b259842ba21c42046998572ffbc0eda3, type: 3}

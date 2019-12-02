@@ -88,7 +88,6 @@ GameObject:
   - component: {fileID: 4815612887575588}
   - component: {fileID: 33269085879192392}
   - component: {fileID: 23182445231466788}
-  - component: {fileID: 64682161827575584}
   m_Layer: 0
   m_Name: BP_champagne_color_2
   m_TagString: Untagged
@@ -156,17 +155,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &64682161827575584
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1619506378958066}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300000, guid: 1ef239c792a51b04f8bd3fa4847a11e8, type: 3}

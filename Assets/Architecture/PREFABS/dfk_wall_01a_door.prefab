@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4834809529978220}
   - component: {fileID: 33242270586875562}
   - component: {fileID: 23967065607116602}
-  - component: {fileID: 64625907299241748}
   m_Layer: 0
   m_Name: dfk_wall_01a_door
   m_TagString: Untagged
@@ -79,20 +78,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &64625907299241748
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1008714544647598}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300000, guid: bc5b4ee67ecae954cbfbfebee0f8fac1, type: 3}
 --- !u!1 &1295780207140938
 GameObject:
   m_ObjectHideFlags: 0
