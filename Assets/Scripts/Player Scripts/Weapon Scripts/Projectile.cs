@@ -47,11 +47,13 @@ public class Projectile : MonoBehaviour
         //Transform hole = (Transform)Instantiate(bulletHole, destination, Quaternion.LookRotation(hitInfo.normal) * Quaternion.Euler(0, 180, 0));
         //hole.SetParent(hitInfo.transform);
         //if (enemy == null)
-            //return;
+        //return;
 
-
-        enemy.TakeDamage(damage);
-        print(enemy.gameObject.name + " Took damage");
+        if (enemy != null)
+        {
+            enemy.TakeDamage(damage);
+            print(enemy.gameObject.name + " Took damage");
+        }
     }
 
     bool IsDestinationReached()
