@@ -7,7 +7,7 @@ public class EnemyShooter : MonoBehaviour
 
 
     [SerializeField] float rateOfFire;
-    [SerializeField] Projectile projectile;
+    [SerializeField] EnemyProjectile projectile;
     [SerializeField] Transform hand;
     [SerializeField] AudioController audioReload;
     [SerializeField] AudioController audioFire;
@@ -92,7 +92,7 @@ public class EnemyShooter : MonoBehaviour
 
         muzzle.LookAt(aim + aimTargetOffset);
 
-        Projectile newBullet = Instantiate(projectile, muzzle.position, muzzle.rotation);
+        EnemyProjectile newBullet = Instantiate(projectile, muzzle.position, muzzle.rotation);
 
         FireEffect();
         audioFire.Play();

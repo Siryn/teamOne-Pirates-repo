@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Projectile : MonoBehaviour
+public class EnemyProjectile : MonoBehaviour
 {
     public float speed;
     public float timeToLive;
@@ -40,7 +40,7 @@ public class Projectile : MonoBehaviour
 
     void CheckEnemy(RaycastHit hitInfo)
     {
-        EnemyHealth enemy = hitInfo.transform.GetComponent<EnemyHealth>();
+        PlayerHealth player = hitInfo.transform.GetComponent<PlayerHealth>();
 
         destination = hitInfo.point + hitInfo.normal * .0015f;
 
@@ -50,8 +50,8 @@ public class Projectile : MonoBehaviour
             //return;
 
 
-        enemy.TakeDamage(damage);
-        print(enemy.gameObject.name + " Took damage");
+        player.TakeDamage(damage);
+        print(player.gameObject.name + " Took damage");
     }
 
     bool IsDestinationReached()
