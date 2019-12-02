@@ -39,7 +39,6 @@ public class EnemyShoot : WeaponController
         CheckReload();
         shouldFire = true;
 
-        //GameManager.Instance.Timer.Add(EndBurst, Random.Range(burstDurationMin, burstDurationMax));
         if (hasSword)
         {
             Invoke("EndBurst", .4f);
@@ -57,7 +56,6 @@ public class EnemyShoot : WeaponController
         //if (!enemyPlayer.enemyhealth.IsAlive)
            // return;
         CheckReload();
-        //GameManager.Instance.Timer.Add(StartBurst, shootingSpeed);
         Invoke("StartBurst", shootingSpeed);
     }
 

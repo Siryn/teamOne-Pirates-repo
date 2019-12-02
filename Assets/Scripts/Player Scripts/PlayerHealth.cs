@@ -19,4 +19,9 @@ public class PlayerHealth : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
+    public void TakeDamage(int damage)
+    {
+        currentHp -= damage;
+    }
 }
