@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4432975863972712}
   - component: {fileID: 33498958101766732}
   - component: {fileID: 23140861109226398}
+  - component: {fileID: 3203264526789633282}
   m_Layer: 0
   m_Name: dfk_floor_01
   m_TagString: Untagged
@@ -77,3 +78,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &3203264526789633282
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618768248407598}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4999998, y: 0.05, z: 2.5}
+  m_Center: {x: -1.2500001, y: 0, z: -1.25}
