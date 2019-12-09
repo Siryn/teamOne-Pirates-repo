@@ -10,6 +10,7 @@ public class Scanner : MonoBehaviour
     [SerializeField] float scanSpeed;
     [SerializeField] [Range(0, 360)] float fieldOfView;
     [SerializeField] LayerMask mask;
+    [SerializeField] LayerMask targetMask;
 
     SphereCollider rangeTrigger;
 
@@ -66,6 +67,13 @@ public class Scanner : MonoBehaviour
 
             if (!transform.IsInLineOfSight(results[i].transform.position, fieldOfView, mask, Vector3.up))
                 continue;
+
+            if(Physics.Linecast(transform.position, results[i].transform.position, targetMask))
+            {
+                print("something in the way");
+                    StartCoroutine(PrepareScan());
+                    return targets;
+            }
 
             targets.Add(player);
         }
