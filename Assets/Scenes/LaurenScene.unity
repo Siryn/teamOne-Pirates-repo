@@ -22087,7 +22087,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scanSpeed: 1
-  fieldOfView: 39
+  fieldOfView: 180
   mask:
     serializedVersion: 2
     m_Bits: 256
@@ -46432,7 +46432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scanSpeed: 1
-  fieldOfView: 39
+  fieldOfView: 180
   mask:
     serializedVersion: 2
     m_Bits: 256
