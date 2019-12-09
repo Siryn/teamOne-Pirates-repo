@@ -26992,7 +26992,7 @@ MonoBehaviour:
   burstDurationMax: 0.3
   burstDurationMin: 0.7
   hasSword: 1
-  anim: {fileID: 0}
+  anim: {fileID: 1682812960}
 --- !u!136 &1171893013
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -41294,6 +41294,12 @@ Transform:
 --- !u!4 &1682812959 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 3b9ceeda0fdc3424e8df1b21ab3fa2a8,
+    type: 3}
+  m_PrefabInstance: {fileID: 2037993776}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1682812960 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: 3b9ceeda0fdc3424e8df1b21ab3fa2a8,
     type: 3}
   m_PrefabInstance: {fileID: 2037993776}
   m_PrefabAsset: {fileID: 0}
