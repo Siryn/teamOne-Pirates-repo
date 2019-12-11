@@ -32,7 +32,7 @@ public class Projectile : MonoBehaviour
 
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 5f))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 1f))
         {
             CheckEnemy(hit);
         }
@@ -44,14 +44,10 @@ public class Projectile : MonoBehaviour
 
         destination = hitInfo.point + hitInfo.normal * .0015f;
 
-        //Transform hole = (Transform)Instantiate(bulletHole, destination, Quaternion.LookRotation(hitInfo.normal) * Quaternion.Euler(0, 180, 0));
-        //hole.SetParent(hitInfo.transform);
-        //if (enemy == null)
-        //return;
-
         if (enemy != null)
         {
             enemy.TakeDamage(damage);
+            enemy.CheckDeath();
             print(enemy.gameObject.name + " Took damage");
         }
     }

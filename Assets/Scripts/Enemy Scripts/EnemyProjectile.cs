@@ -52,6 +52,7 @@ public class EnemyProjectile : MonoBehaviour
         if (player != null)
         {
             player.TakeDamage(damage);
+            player.CheckDeath();
             print(player.gameObject.name + " Took damage");
         }
     }

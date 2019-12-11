@@ -113,7 +113,7 @@ public class EnemyShooter : MonoBehaviour
             PlayerHealth player = hit.collider.gameObject.GetComponent<PlayerHealth>();
             player.currentHp -= damage;
             player.CheckDeath();
-            print("PlayerWouldTakeDamage");
+            //print("PlayerWouldTakeDamage");
 
         }
         else
@@ -121,7 +121,7 @@ public class EnemyShooter : MonoBehaviour
             Transform player = enemyPlayer.priorityTarget.transform;
             enemyPlayer.playerInRange = false;
             enemyPlayer.SetDestinationToPriorityTarget(player);
-            print("out of range");
+            //print("out of range");
         }
     }
 }

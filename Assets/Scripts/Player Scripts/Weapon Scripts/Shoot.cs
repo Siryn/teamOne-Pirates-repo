@@ -89,14 +89,14 @@ public class Shoot : MonoBehaviour
         if (inputController.fire1 && canFire == true && weaponController.activeWeapon.name == "Sword")
         {
             weaponController.activeWeapon.SwordAttack();
-            print("sword attack");
+            //print("sword attack");
             return;
         }
 
         if (inputController.fire1 && canFire == true)
         {
             weaponController.activeWeapon.Fire();
-            print("worked");
+            //print("worked");
         }
 
     }
@@ -158,7 +158,7 @@ public class Shoot : MonoBehaviour
             return;
 
         nextFireAllowed = Time.time + rateOfFire;
-        print("sword did attack");
+        //print("sword did attack");
         playerAnim.SetBool("swordAttack", true);
         weaponController.SwordDamage();
         Invoke("ResetSwordBool", rateOfFire);

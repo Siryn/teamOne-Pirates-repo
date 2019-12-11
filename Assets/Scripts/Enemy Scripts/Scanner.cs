@@ -54,7 +54,7 @@ public class Scanner : MonoBehaviour
 
     public List<T> ScanForTargets<T>()
     {
-        print("ScanForTargets");
+        //print("ScanForTargets");
         List<T> targets = new List<T>();
         Collider[] results = Physics.OverlapSphere(transform.position, ScanRange);
 
@@ -70,7 +70,7 @@ public class Scanner : MonoBehaviour
 
             if(Physics.Linecast(transform.position, results[i].transform.position, targetMask))
             {
-                print("something in the way");
+                //print("something in the way");
                     StartCoroutine(PrepareScan());
                     return targets;
             }
