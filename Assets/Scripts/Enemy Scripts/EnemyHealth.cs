@@ -4,19 +4,28 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+    public bool enemyIsDead;
     public int maxHp;
     public int currentHp;
+    public Animator anim;
+    public bool isBoss;
+    public GameObject keyfab;
 
     public void OnDeath()
     {
-
+        if(isBoss)
+        {
+            keyfab.SetActive(true);
+        }
+        gameObject.SetActive(false);
     }
 
     public void CheckDeath()
     {
         if(currentHp <= 0)
         {
-            gameObject.SetActive(false);
+            anim.SetBool("onDeath", true);
+            Invoke("OnDeath", 5);
         }
     }
 

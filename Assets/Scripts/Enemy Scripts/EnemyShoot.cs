@@ -12,12 +12,14 @@ public class EnemyShoot : WeaponController
     [SerializeField] float burstDurationMin;
 
     EnemyPlayer enemyPlayer;
+    EnemyHealth enemyHealth;
     bool shouldFire;
     public bool hasSword;
     public Animator anim;
 
     private void Start()
     {
+        enemyHealth = GetComponent<EnemyHealth>();
         enemyPlayer = GetComponent<EnemyPlayer>();
         enemyPlayer.OnTargetSelected += EnemyPlayer_OnTargetSelected;
         anim.SetBool("isWalking", true);
@@ -27,14 +29,13 @@ public class EnemyShoot : WeaponController
     {
         print("OnTargetSelected");
         enemyActiveWeapon.aimTarget = target.transform;
-        //enemyActiveWeapon.aimTargetOffset = Vector3.up * 1.5f;
         StartBurst();
     }
 
     void StartBurst()
     {
-        //if (!enemyPlayer.enemyhealth.IsAlive)
-           // return;
+        if (enemyHealth.enemyIsDead == true)
+            return;
 
         CheckReload();
         shouldFire = true;
@@ -53,8 +54,8 @@ public class EnemyShoot : WeaponController
     void EndBurst()
     {
         shouldFire = false;
-        //if (!enemyPlayer.enemyhealth.IsAlive)
-           // return;
+        if (enemyHealth.enemyIsDead == true)
+            return;
         CheckReload();
         Invoke("StartBurst", shootingSpeed);
     }
@@ -67,7 +68,7 @@ public class EnemyShoot : WeaponController
 
     private void Update()
     {
-        if (!shouldFire || !canfire) //|| !enemyPlayer.enemyhealth.IsAlive)
+        if (!shouldFire || !canfire || enemyHealth.enemyIsDead == true)
             return;
         if (hasSword)
         {
@@ -78,7 +79,6 @@ public class EnemyShoot : WeaponController
         }
         else
         {
-            //enemyActiveWeapon.Fire();
             Invoke("TestAnimShootTiming", 1.2f);
             anim.SetBool("isWalking", false);
             anim.SetBool("isShooting", true);
