@@ -11,6 +11,15 @@ public class EnemyHealth : MonoBehaviour
     public bool isBoss;
     public GameObject keyfab;
 
+    private void Start()
+    {
+        anim = GetComponentInChildren<Animator>();
+        if (isBoss)
+        {
+            keyfab.SetActive(false);
+        }
+    }
+
     public void OnDeath()
     {
         if(isBoss)
