@@ -8,6 +8,8 @@ public class UIController : MonoBehaviour
 
     void Start()
     {
+        Screen.SetResolution(1024, 576, false);
+
         mainMenuPanel.SetActive(true);
         instructionsPanel.SetActive(false);
         creditsPanel.SetActive(false);

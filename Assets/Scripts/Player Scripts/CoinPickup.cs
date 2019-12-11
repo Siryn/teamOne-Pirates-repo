@@ -5,9 +5,11 @@ using UnityEngine.UI;
 
 public class CoinPickup : MonoBehaviour
 {
-    private int score;
+    private int score = 0;
+    private bool hasKey = false;
 
     public Text scoreText;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Coin"))
@@ -16,5 +18,18 @@ public class CoinPickup : MonoBehaviour
             Destroy(other.gameObject);
             scoreText.text = "Yer Loot: " + score;
         }
+
+        if(other.CompareTag("Key"))
+        {
+            hasKey = true;
+        }
+
+        if(other.CompareTag("Chest"))
+        {
+            //level over
+            score += 100;
+            
+        }
     }
+
 }

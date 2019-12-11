@@ -29315,8 +29315,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d87e492abbe42143a429ed795228ba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 10
-  currentHp: 10
+  maxHp: 20
+  currentHp: 20
 --- !u!114 &1171893012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30816,11 +30816,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jack_Sparrow
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 87a0031f569183d44b89633c00a5336a,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: ab77381130e5b8c458049f1b39845dc0, type: 2}
     - target: {fileID: -4216859302048453862, guid: 87a0031f569183d44b89633c00a5336a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30891,6 +30886,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.75
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 87a0031f569183d44b89633c00a5336a,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ab77381130e5b8c458049f1b39845dc0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87a0031f569183d44b89633c00a5336a, type: 3}
 --- !u!1001 &1265912142
@@ -54850,11 +54850,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Walking
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 3b9ceeda0fdc3424e8df1b21ab3fa2a8,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: c7f8a50bd41883e4d9a1ef12e49109a2, type: 2}
     - target: {fileID: -4216859302048453862, guid: 3b9ceeda0fdc3424e8df1b21ab3fa2a8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -54925,6 +54920,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 3b9ceeda0fdc3424e8df1b21ab3fa2a8,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c7f8a50bd41883e4d9a1ef12e49109a2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b9ceeda0fdc3424e8df1b21ab3fa2a8, type: 3}
 --- !u!1001 &2040565349
