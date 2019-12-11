@@ -22,6 +22,7 @@ public class CoinPickup : MonoBehaviour
         if(other.CompareTag("Key"))
         {
             hasKey = true;
+            Debug.Log("got the key");
         }
 
         if(other.CompareTag("Chest"))
@@ -29,6 +30,11 @@ public class CoinPickup : MonoBehaviour
             //level over
             score += 100;
             
+        }
+
+        if (other.CompareTag("Door") && hasKey == true)
+        {
+            Destroy(other.gameObject);
         }
     }
 
