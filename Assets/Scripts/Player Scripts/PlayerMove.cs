@@ -26,6 +26,23 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
 
+        if (Input.GetButton("Horizontal"))
+        {
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                transform.eulerAngles = new Vector3(0, 180, 0);
+            }
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                transform.eulerAngles = new Vector3(0, 0, 0);
+            }
+            playerAnimator.SetBool("walking", true);
+        }
+        else
+        {
+            playerAnimator.SetBool("walking", false);
+        }
+
         if (characterController.isGrounded)
         {
             // We are grounded, so recalculate
@@ -33,23 +50,6 @@ public class PlayerMove : MonoBehaviour
 
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f);
             moveDirection *= speed;
-
-            if (Input.GetButton("Horizontal"))
-            {
-                if (Input.GetKeyDown(KeyCode.A))
-                {
-                    transform.eulerAngles = new Vector3(0, 180, 0);
-                }
-                if (Input.GetKeyDown(KeyCode.D))
-                {
-                    transform.eulerAngles = new Vector3(0, 0, 0);
-                }
-                playerAnimator.SetBool("walking", true);
-            }
-            else
-            {
-                playerAnimator.SetBool("walking", false);
-            }
 
             if (Input.GetButton("Jump"))
             {
