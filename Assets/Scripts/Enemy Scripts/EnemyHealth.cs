@@ -24,8 +24,9 @@ public class EnemyHealth : MonoBehaviour
     {
         if(currentHp <= 0)
         {
+            enemyIsDead = true;
             anim.SetBool("onDeath", true);
-            Invoke("OnDeath", 5);
+            Invoke("OnDeath", 3);
         }
     }
 
