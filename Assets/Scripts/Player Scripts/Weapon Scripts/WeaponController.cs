@@ -27,7 +27,11 @@ public class WeaponController : MonoBehaviour
         weapons = weaponHolster.GetComponentsInChildren<Shoot>();
         if (weapons.Length > 0)
             Equip(0);
-
+    }
+    private void Start()
+    {
+        if(this.gameObject.tag == "Player")
+            canfire = false;
     }
 
     void DeactivateWeaopns()

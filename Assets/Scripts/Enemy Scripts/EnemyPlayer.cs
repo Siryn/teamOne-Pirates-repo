@@ -39,8 +39,6 @@ public class EnemyPlayer : MonoBehaviour
         pathFinder.Agent.speed = walkSpeed;
         playerScanner.OnScanReady += Scanner_OnScanReady;
         Scanner_OnScanReady();
-
-        //enemyhealth.OnDeath += Enemyhealth_OnDeath;
         enemyState.OnModeChanged += EnemyState_OnModeChanged;
     }
 

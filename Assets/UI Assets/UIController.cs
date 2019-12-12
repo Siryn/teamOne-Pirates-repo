@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class UIController : MonoBehaviour
 {
     public GameObject mainMenuPanel, instructionsPanel, creditsPanel;
-
+    public WeaponController weaponController;
     public Text feedbackText;
 
     void Start()
@@ -38,6 +38,7 @@ public class UIController : MonoBehaviour
     public void OnClickPlay()
     {
         mainMenuPanel.SetActive(false);
+        Invoke("CanShoot", 1f);
         StartCoroutine(WaitToFade(4f));
     }
 
@@ -58,5 +59,10 @@ public class UIController : MonoBehaviour
             yield return new WaitForSeconds(waitTime);
             feedbackText.CrossFadeAlpha(0.0f, 2f, false);
         }
+    }
+
+    public void CanShoot()
+    {
+        weaponController.canfire = true;
     }
 }

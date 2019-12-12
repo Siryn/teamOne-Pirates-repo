@@ -10,10 +10,12 @@ public class EnemyHealth : MonoBehaviour
     public Animator anim;
     public bool isBoss;
     public GameObject keyfab;
+    public EnemyPatrol enemyPatrol;
 
     private void Start()
     {
         anim = GetComponentInChildren<Animator>();
+        enemyPatrol = GetComponent<EnemyPatrol>();
         if (isBoss)
         {
             keyfab.SetActive(false);
@@ -34,7 +36,10 @@ public class EnemyHealth : MonoBehaviour
         if(currentHp <= 0)
         {
             enemyIsDead = true;
+            enemyPatrol.pathFinder.Agent.isStopped = true;
             anim.SetBool("onDeath", true);
+            anim.SetBool("playOnce", true);
+            Invoke("OnlyPlayOnce", 0.1f);
             Invoke("OnDeath", 3);
         }
     }
@@ -42,5 +47,10 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHp -= damage;
+    }
+
+    public void OnlyPlayOnce()
+    {
+        anim.SetBool("playOnce", false);
     }
 }

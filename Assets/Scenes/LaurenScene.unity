@@ -5969,7 +5969,7 @@ Transform:
   m_Children:
   - {fileID: 304716602}
   m_Father: {fileID: 767229605}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &58539260
 MonoBehaviour:
@@ -6517,6 +6517,7 @@ MonoBehaviour:
   mainMenuPanel: {fileID: 2041148437}
   instructionsPanel: {fileID: 308287485}
   creditsPanel: {fileID: 1277856110}
+  weaponController: {fileID: 1149570740}
   feedbackText: {fileID: 436871554}
 --- !u!114 &68298549
 MonoBehaviour:
@@ -14097,6 +14098,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   isBoss: 0
   keyfab: {fileID: 0}
+  enemyPatrol: {fileID: 0}
 --- !u!114 &204632744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14155,6 +14157,7 @@ MonoBehaviour:
   wayPointController: {fileID: 214077274}
   waitTimeMin: 1
   waitTimeMax: 3
+  pathFinder: {fileID: 0}
   enemyShoot: {fileID: 204632744}
 --- !u!114 &204632747
 MonoBehaviour:
@@ -24918,8 +24921,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 833169563}
   - {fileID: 58539259}
+  - {fileID: 833169563}
   m_Father: {fileID: 1149570744}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -25879,7 +25882,7 @@ Transform:
   m_Children:
   - {fileID: 1478055147}
   m_Father: {fileID: 767229605}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &833169564
 MonoBehaviour:
@@ -30995,6 +30998,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   isBoss: 1
   keyfab: {fileID: 1574900894}
+  enemyPatrol: {fileID: 0}
 --- !u!114 &1171893012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31053,6 +31057,7 @@ MonoBehaviour:
   wayPointController: {fileID: 1827340627}
   waitTimeMin: 1
   waitTimeMax: 3
+  pathFinder: {fileID: 0}
   enemyShoot: {fileID: 1171893012}
 --- !u!114 &1171893015
 MonoBehaviour:
@@ -32416,6 +32421,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jack_Sparrow
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 87a0031f569183d44b89633c00a5336a,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ab77381130e5b8c458049f1b39845dc0, type: 2}
     - target: {fileID: -4216859302048453862, guid: 87a0031f569183d44b89633c00a5336a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -32486,11 +32496,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.75
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 87a0031f569183d44b89633c00a5336a,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: ab77381130e5b8c458049f1b39845dc0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87a0031f569183d44b89633c00a5336a, type: 3}
 --- !u!1001 &1265912142
@@ -43490,6 +43495,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   isBoss: 0
   keyfab: {fileID: 0}
+  enemyPatrol: {fileID: 0}
 --- !u!114 &1556456954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43548,6 +43554,7 @@ MonoBehaviour:
   wayPointController: {fileID: 1569401107}
   waitTimeMin: 1
   waitTimeMax: 3
+  pathFinder: {fileID: 0}
   enemyShoot: {fileID: 1556456954}
 --- !u!114 &1556456957
 MonoBehaviour:
@@ -56774,6 +56781,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Walking
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 3b9ceeda0fdc3424e8df1b21ab3fa2a8,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c7f8a50bd41883e4d9a1ef12e49109a2, type: 2}
     - target: {fileID: -4216859302048453862, guid: 3b9ceeda0fdc3424e8df1b21ab3fa2a8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -56844,11 +56856,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 3b9ceeda0fdc3424e8df1b21ab3fa2a8,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: c7f8a50bd41883e4d9a1ef12e49109a2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b9ceeda0fdc3424e8df1b21ab3fa2a8, type: 3}
 --- !u!1001 &2040565349

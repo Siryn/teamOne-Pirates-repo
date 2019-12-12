@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: f3e8a30781ce5854084e4100c85196ac
+guid: 69a102a79fc90994db53368258a1204a
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: OneEyeDeath
+    second: DeathOnEyeNew
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -35,19 +35,19 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: OneEyeDeath
+      name: DeathOnEyeNew
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 89
+      lastFrame: 70
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 1
+      loopTime: 0
+      loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -100,7 +100,7 @@ ModelImporter:
     normalSmoothingSource: 0
   referencedClips: []
   importAnimation: 1
-  copyAvatar: 1
+  copyAvatar: 0
   humanDescription:
     serializedVersion: 3
     human: []
@@ -117,8 +117,7 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 798099bab7850704fabc44b3dba67f90,
-    type: 3}
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
   humanoidOversampling: 1
   additionalBone: 0

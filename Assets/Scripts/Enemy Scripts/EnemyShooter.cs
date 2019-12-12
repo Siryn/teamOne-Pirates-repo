@@ -32,11 +32,6 @@ public class EnemyShooter : MonoBehaviour
         transform.localRotation = Quaternion.identity;
     }
 
-    void OnDisable()
-    {
-
-    }
-
     private void Update()
     {
         Debug.DrawRay(gameObject.transform.position, transform.TransformDirection(Vector3.forward), Color.blue);
@@ -112,15 +107,12 @@ public class EnemyShooter : MonoBehaviour
             PlayerHealth player = hit.collider.gameObject.GetComponent<PlayerHealth>();
             player.TakeDamage(damage);
             player.CheckDeath();
-            //print("PlayerWouldTakeDamage");
-
         }
         else
         {
             Transform player = enemyPlayer.priorityTarget.transform;
             enemyPlayer.playerInRange = false;
             enemyPlayer.SetDestinationToPriorityTarget(player);
-            //print("out of range");
         }
     }
 }
