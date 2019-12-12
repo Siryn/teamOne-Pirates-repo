@@ -64,7 +64,6 @@ public class WeaponController : MonoBehaviour
 
     internal void Equip(int index)
     {
-        //print(index);
         DeactivateWeaopns();
         canfire = true;
         canSwitch = true;

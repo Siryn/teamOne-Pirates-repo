@@ -128,7 +128,7 @@ public class Shoot : MonoBehaviour
 
         nextFireAllowed = Time.time + rateOfFire;
         playerAnim.SetBool("isShooting", true);
-        Invoke("TestingAnimTime", 0.45f);
+        Invoke("ShootAtAnimTime", 0.45f);
         Invoke("ResetShootingAnim", rateOfFire);
 
     }
@@ -138,7 +138,7 @@ public class Shoot : MonoBehaviour
         playerAnim.SetBool("isShooting", false);
     }
 
-    public void TestingAnimTime()
+    public void ShootAtAnimTime()
     {
         Projectile newBullet = Instantiate(projectile, muzzle.position, muzzle.rotation);
         newBullet.transform.LookAt(aimForNow);
@@ -149,6 +149,8 @@ public class Shoot : MonoBehaviour
             //reloader.Reloading();
             hgReload.ReloadHandGun();
             weaponController.SwitchWeapon(1);
+            //weaponController.canSwitch = false;
+            Invoke("CannotSwitchWeaopns", 0.1f);
         }
     }
 
@@ -167,6 +169,11 @@ public class Shoot : MonoBehaviour
     public void ResetSwordBool()
     {
         playerAnim.SetBool("swordAttack", false);
+    }
+
+    public void CannotSwitchWeaopns()
+    {
+        weaponController.canSwitch = false;
     }
 
 }
