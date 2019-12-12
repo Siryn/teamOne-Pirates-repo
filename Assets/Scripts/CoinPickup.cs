@@ -15,7 +15,7 @@ public class CoinPickup : MonoBehaviour
     {
         if(other.CompareTag("Coin"))
         {
-            score += 15;
+            score += 75;
             Destroy(other.gameObject);
             scoreText.text = "$ " + score;
         }
@@ -30,12 +30,13 @@ public class CoinPickup : MonoBehaviour
 
         else if(other.CompareTag("Chest"))
         {
-            endScreen.SetActive(true);
-            gameResultsText.text = "Victory!";
-            scoreResultsText.text = "Loot Recovered:\n$" + score;
             score += 100;
             scoreText.text = "$ " + score;
             Destroy(other.gameObject);
+
+            endScreen.SetActive(true);
+            gameResultsText.text = "Victory!";
+            scoreResultsText.text = "Loot Recovered:\n$" + score;
         }
 
         else if(other.CompareTag("Door") && hasKey)
