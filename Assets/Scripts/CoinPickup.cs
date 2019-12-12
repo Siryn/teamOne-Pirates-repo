@@ -19,22 +19,28 @@ public class CoinPickup : MonoBehaviour
             scoreText.text = "Yer Loot: " + score;
         }
 
-        if(other.CompareTag("Key"))
+        else if(other.CompareTag("Key"))
         {
             hasKey = true;
             Debug.Log("got the key");
+            Destroy(other.gameObject);
         }
 
-        if(other.CompareTag("Chest"))
+        else if(other.CompareTag("Chest"))
         {
             //level over
             score += 100;
-            
+            scoreText.text = "Yer Loot: " + score;
+            Destroy(other.gameObject);
         }
 
-        if (other.CompareTag("Door") && hasKey == true)
+        else if(other.CompareTag("Door") && hasKey)
         {
             Destroy(other.gameObject);
+        }
+        else if(other.CompareTag("Door") && !hasKey)
+        {
+            print("no key");
         }
     }
 
