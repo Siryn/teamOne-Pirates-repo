@@ -8,7 +8,7 @@ public class WeaponController : MonoBehaviour
 {
     public Shoot activeWeapon;
     public EnemyShooter enemyActiveWeapon;
-    public Text weaponText;
+    public GameObject swordIcon, gunIcon;
     public float weaponSwitchTime;
     public bool canSwitch;
 
@@ -70,7 +70,17 @@ public class WeaponController : MonoBehaviour
         {
             weapons[i].gameObject.SetActive(true);
         }
-        weaponText.text = weapons[index].name.ToString();
+
+        if (weapons[index].name == "Sword")
+        {
+            swordIcon.SetActive(true);
+            gunIcon.SetActive(false);
+        }
+        if(weapons[index].name == "Hand Gun")
+        {
+            gunIcon.SetActive(true);
+            swordIcon.SetActive(false);
+        }
         Reload reloader = weapons[index].GetComponent<Reload>();
         int amountInInventory = reloader.roundsRemainingInInventory;
         int amountInClip = reloader.roundsRemainingInClip;

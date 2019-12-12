@@ -110,7 +110,7 @@ public class EnemyShooter : MonoBehaviour
         if (Physics.Raycast(gameObject.transform.position, transform.TransformDirection(Vector3.forward), out hit, 2f, layerMask))
         {
             PlayerHealth player = hit.collider.gameObject.GetComponent<PlayerHealth>();
-            player.currentHp -= damage;
+            player.TakeDamage(damage);
             player.CheckDeath();
             //print("PlayerWouldTakeDamage");
 

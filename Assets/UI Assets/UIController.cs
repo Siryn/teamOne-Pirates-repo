@@ -1,10 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
     public GameObject mainMenuPanel, instructionsPanel, creditsPanel;
+
+    public Text feedbackText;
 
     void Start()
     {
@@ -34,10 +38,25 @@ public class UIController : MonoBehaviour
     public void OnClickPlay()
     {
         mainMenuPanel.SetActive(false);
+        StartCoroutine(WaitToFade(4f));
     }
 
     public void OnClickQuit()
     {
         Application.Quit();
+    }
+
+    public void OnClickRestart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private IEnumerator WaitToFade(float waitTime)
+    {
+        while(true)
+        {
+            yield return new WaitForSeconds(waitTime);
+            feedbackText.CrossFadeAlpha(0.0f, 2f, false);
+        }
     }
 }

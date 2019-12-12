@@ -32,7 +32,7 @@ public class EnemyProjectile : MonoBehaviour
 
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 5f))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 1f))
         {
             CheckEnemy(hit);
         }

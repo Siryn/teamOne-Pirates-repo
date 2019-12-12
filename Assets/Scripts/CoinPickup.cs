@@ -8,15 +8,16 @@ public class CoinPickup : MonoBehaviour
     private int score = 0;
     private bool hasKey = false;
 
-    public Text scoreText;
+    public Text scoreText, feedbackText, gameResultsText, scoreResultsText;
+    public GameObject keyIcon, endScreen;
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Coin"))
         {
-            score++;
+            score += 15;
             Destroy(other.gameObject);
-            scoreText.text = "Yer Loot: " + score;
+            scoreText.text = "$ " + score;
         }
 
         else if(other.CompareTag("Key"))
@@ -24,23 +25,29 @@ public class CoinPickup : MonoBehaviour
             hasKey = true;
             Debug.Log("got the key");
             Destroy(other.gameObject);
+            keyIcon.SetActive(true);
         }
 
         else if(other.CompareTag("Chest"))
         {
-            //level over
+            endScreen.SetActive(true);
+            gameResultsText.text = "Victory!";
+            scoreResultsText.text = "Loot Recovered:\n$" + score;
             score += 100;
-            scoreText.text = "Yer Loot: " + score;
+            scoreText.text = "$ " + score;
             Destroy(other.gameObject);
         }
 
         else if(other.CompareTag("Door") && hasKey)
         {
             Destroy(other.gameObject);
+            keyIcon.SetActive(false);
         }
         else if(other.CompareTag("Door") && !hasKey)
         {
-            print("no key");
+            feedbackText.CrossFadeAlpha(1.0f, 0.0f, false);
+            feedbackText.text = "It's locked.";
+            feedbackText.CrossFadeAlpha(0.0f, 3f, false);
         }
     }
 
