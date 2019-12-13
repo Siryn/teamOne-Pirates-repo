@@ -13,6 +13,7 @@ public class EnemyShoot : WeaponController
 
     EnemyPlayer enemyPlayer;
     EnemyHealth enemyHealth;
+    PlayerHealth playerHealth;
     bool shouldFire;
     public bool hasSword;
     public Animator anim;
@@ -21,6 +22,7 @@ public class EnemyShoot : WeaponController
     {
         enemyHealth = GetComponent<EnemyHealth>();
         enemyPlayer = GetComponent<EnemyPlayer>();
+        playerHealth = FindObjectOfType<PlayerHealth>();
         enemyPlayer.OnTargetSelected += EnemyPlayer_OnTargetSelected;
         anim.SetBool("isWalking", true);
     }
@@ -34,7 +36,7 @@ public class EnemyShoot : WeaponController
 
     void StartBurst()
     {
-        if (enemyHealth.enemyIsDead == true)
+        if (enemyHealth.enemyIsDead == true || playerHealth.currentHp <= 0)
             return;
 
         CheckReload();
@@ -54,7 +56,7 @@ public class EnemyShoot : WeaponController
     void EndBurst()
     {
         shouldFire = false;
-        if (enemyHealth.enemyIsDead == true)
+        if (enemyHealth.enemyIsDead == true || playerHealth.currentHp <= 0)
             return;
         CheckReload();
         Invoke("StartBurst", shootingSpeed);
