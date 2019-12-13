@@ -9,6 +9,7 @@ public class UIController : MonoBehaviour
     public GameObject mainMenuPanel, instructionsPanel, creditsPanel;
     public WeaponController weaponController;
     public Text feedbackText;
+    public AudioSource buttonClick;
 
     void Start()
     {
@@ -22,17 +23,20 @@ public class UIController : MonoBehaviour
     public void OnClickInstructions()
     {
         instructionsPanel.SetActive(true);
+        buttonClick.Play();
     }
 
     public void OnClickCredits()
     {
         creditsPanel.SetActive(true);
+        buttonClick.Play();
     }
 
     public void OnClickBack()
     {
         instructionsPanel.SetActive(false);
         creditsPanel.SetActive(false);
+        buttonClick.Play();
     }
 
     public void OnClickPlay()
@@ -40,16 +44,19 @@ public class UIController : MonoBehaviour
         mainMenuPanel.SetActive(false);
         Invoke("CanShoot", 1f);
         StartCoroutine(WaitToFade(4f));
+        buttonClick.Play();
     }
 
     public void OnClickQuit()
     {
         Application.Quit();
+        buttonClick.Play();
     }
 
     public void OnClickRestart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        buttonClick.Play();
     }
 
     private IEnumerator WaitToFade(float waitTime)

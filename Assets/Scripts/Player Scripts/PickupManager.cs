@@ -3,18 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CoinPickup : MonoBehaviour
+public class PickupManager : MonoBehaviour
 {
     private int score = 0;
     private bool hasKey = false;
 
     public Text scoreText, feedbackText, gameResultsText, scoreResultsText;
     public GameObject keyIcon, endScreen;
+    public AudioSource coinPickup, doorUnlock, keyFound;
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Coin"))
         {
+            coinPickup.Play();
             score += 75;
             Destroy(other.gameObject);
             scoreText.text = "$ " + score;
@@ -22,6 +24,7 @@ public class CoinPickup : MonoBehaviour
 
         else if(other.CompareTag("Key"))
         {
+            keyFound.Play();
             hasKey = true;
             Debug.Log("got the key");
             Destroy(other.gameObject);
@@ -41,6 +44,7 @@ public class CoinPickup : MonoBehaviour
 
         else if(other.CompareTag("Door") && hasKey)
         {
+            doorUnlock.Play();
             Destroy(other.gameObject);
             keyIcon.SetActive(false);
         }

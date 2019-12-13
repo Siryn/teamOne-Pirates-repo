@@ -12,6 +12,7 @@ public class Shoot : MonoBehaviour
     public Transform aimForNow;
     public AudioController audioReload;
     public AudioController audioFire;
+    public AudioSource swordSlash;
 
     public Reload reloader;
     public InputController inputController;
@@ -162,6 +163,7 @@ public class Shoot : MonoBehaviour
         nextFireAllowed = Time.time + rateOfFire;
         //print("sword did attack");
         playerAnim.SetBool("swordAttack", true);
+        swordSlash.Play();
         weaponController.SwordDamage();
         Invoke("ResetSwordBool", rateOfFire);
     }
