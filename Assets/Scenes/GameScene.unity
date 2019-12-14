@@ -21416,7 +21416,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &308287486
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37664,7 +37664,7 @@ MonoBehaviour:
   feedbackText: {fileID: 436871554}
   gameResultsText: {fileID: 1140692275}
   scoreResultsText: {fileID: 1425607530}
-  keyIcon: {fileID: 1574900894}
+  keyIcon: {fileID: 1474332680}
   endScreen: {fileID: 690729493}
   coinPickup: {fileID: 33167967}
   doorUnlock: {fileID: 1471377258}
@@ -38222,7 +38222,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b704b8545e81dbb48941ffe4212fa56b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -40165,7 +40165,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1277856111
 RectTransform:
   m_ObjectHideFlags: 0
@@ -69329,7 +69329,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ebcc9dc354853f9459ad048d6c3cdb61, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.25
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -70181,7 +70181,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2041148438
 RectTransform:
   m_ObjectHideFlags: 0
